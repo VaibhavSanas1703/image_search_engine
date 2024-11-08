@@ -27,7 +27,7 @@ const showImages = (images) => {
          images.forEach((image) => {
             imagesContainer.innerHTML += `
             <div class="images">
-               <img src=${image.urls.regular} alt="">
+               <img src=${image.urls.small_s3} alt="" loading='lazy'>
                <div class='download-container'>
                  <a href=${image.links.html} target='__blank' download>Download</a>
                </div>
