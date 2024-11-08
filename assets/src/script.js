@@ -13,6 +13,8 @@ const fetchImages = async (userSearch) => {
       const res = await fetch(`https://api.unsplash.com/search/photos?page=${imgpage}&per_page=20&query=${userSearch}&client_id=${accessKey}`)
       const data = await res.json()
       loadMore.innerHTML = "Show more"
+      console.log(data);
+      
       showImages(data.results);
    }
    catch(err){
@@ -25,7 +27,7 @@ const showImages = (images) => {
          images.forEach((image) => {
             imagesContainer.innerHTML += `
             <div class="images">
-               <img src=${image.urls.small} alt="">
+               <img src=${image.urls.regular} alt="">
                <div class='download-container'>
                  <a href=${image.links.html} target='__blank' download>Download</a>
                </div>
